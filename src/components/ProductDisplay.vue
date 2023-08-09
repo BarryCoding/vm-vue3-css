@@ -2,6 +2,8 @@
 import { ref, computed } from 'vue'
 import socksBlueImage from '../assets/socks_blue.jpg'
 import socksGreenImage from '../assets/socks_green.jpg'
+import PrettyButton from './PrettyButton.vue'
+import ResponsiveWidth from './ResponsiveWidth.vue'
 
 const props = defineProps<{ premium: boolean }>()
 
@@ -50,10 +52,10 @@ function updateVariant(index: number) {
 <template>
   <div class="p-4">
     <div class="flex flex-row flex-wrap">
-      <div class="w-full md:w-1/2">
+      <ResponsiveWidth>
         <img class="w-[70%] m-10 p-4 mist-border-2" v-bind:src="image" />
-      </div>
-      <div class="w-full ml-2.5 md:w-1/2 md:ml-0">
+      </ResponsiveWidth>
+      <ResponsiveWidth class="ml-2.5 md:ml-0">
         <h1>{{ title }}</h1>
         <p v-if="inStock">In Stock</p>
         <p v-else>Out of Stock</p>
@@ -68,20 +70,8 @@ function updateVariant(index: number) {
           :key="variant.id"
           @mouseover="updateVariant(index)"
         ></div>
-
-        <button
-          class="w-40 h-16 m-7 p-5 text-lg leading-none text-white text-center rounded-[5px] btn-shading-bn"
-          :class="
-            !inStock
-              ? 'bg-mist cursor-not-allowed'
-              : 'bg-midnight cursor-pointer'
-          "
-          :disabled="!inStock"
-          @click="addToCart"
-        >
-          Add to Cart
-        </button>
-      </div>
+        <PrettyButton :active="inStock" @click-one="addToCart"> </PrettyButton>
+      </ResponsiveWidth>
     </div>
   </div>
 </template>
