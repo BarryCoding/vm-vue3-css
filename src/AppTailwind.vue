@@ -11,12 +11,10 @@ function updateCart(id: number) {
 </script>
 
 <template>
-  <div
-    class="h-[60px] mb-[25px] bg-gradient-to-r from-[#16c0b0] to-[#84cf6a]"
-  ></div>
+  <div class="h-[60px] mb-[25px] bg-gradient-to-r from-ocean to-leaf"></div>
 
   <div
-    class="my-6 mx-25 p-7 border border-solid border-[#d8d8d8] bg-white float-right"
+    class="my-6 mx-25 p-7 border border-solid border-mist bg-white float-right"
   >
     Cart({{ cart.length }})
   </div>
