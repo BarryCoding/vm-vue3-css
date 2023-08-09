@@ -51,10 +51,7 @@ function updateVariant(index: number) {
   <div class="p-4">
     <div class="flex flex-row flex-wrap">
       <div class="w-full md:w-1/2">
-        <img
-          class="w-[70%] m-10 p-4 border-2 border-solid border-mist"
-          v-bind:src="image"
-        />
+        <img class="w-[70%] m-10 p-4 mist-border-2" v-bind:src="image" />
       </div>
       <div class="w-full ml-2.5 md:w-1/2 md:ml-0">
         <h1>{{ title }}</h1>
@@ -66,7 +63,7 @@ function updateVariant(index: number) {
         </ul>
         <div
           v-for="(variant, index) in variants"
-          class="w-12 h-12 mt-2 border-2 border-solid border-mist rounded-[50%]"
+          class="w-12 h-12 mt-2 mist-border-2 rounded-[50%]"
           :class="{ green: 'bg-[green]', blue: 'bg-[blue]' }[variant.color]"
           :key="variant.id"
           @mouseover="updateVariant(index)"
