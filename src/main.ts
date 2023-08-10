@@ -1,8 +1,6 @@
 import { createApp } from 'vue'
 import vuetify from './plugins/vuetify'
-import App from './AppTailwind.vue'
-
-import './assets/main.css'
+import App from './AppVuetify.vue'
 
 const vue = createApp(App)
 vue.use(vuetify)
